@@ -25,6 +25,8 @@ public class Div2_492B {
         for (int i = 1; i < list.size(); i++) {
             ans=Math.max(ans,(list.get(i)-list.get(i-1))/2.0);
         }
+        ans=Math.max(ans,l-list.get(n-1));
+
 
 //        System.out.println(ans);
         System.out.format("%.10f", ans);
