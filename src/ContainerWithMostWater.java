@@ -1,7 +1,9 @@
 public class ContainerWithMostWater {
 
     public static void main(String[] args) {
-        int heights[]={Integer.MAX_VALUE,8,6,2,5,4,8,Integer.MAX_VALUE,8,6,2,5,4,8,Integer.MAX_VALUE,8,6,2,5,4,8,Integer.MAX_VALUE,8,6,2,5,4,8,Integer.MAX_VALUE,8,6,2,5,4,8,Integer.MAX_VALUE};
+        int heights[]={Integer.MAX_VALUE,8,6,2,5,4,8,Integer.MAX_VALUE,8,6,2,5,4,8,Integer.MAX_VALUE,8,6
+                ,2,5,4,8,Integer.MAX_VALUE,8,6,
+                2,5,4,8,Integer.MAX_VALUE,8,6,2,5,4,8,Integer.MAX_VALUE};
         System.out.println(maxArea(heights));
     }
 
