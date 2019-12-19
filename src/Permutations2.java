@@ -5,9 +5,6 @@ import java.util.List;
 public class Permutations2 {
     public static void main(String[] args) {
         int nums[]={1,1,2};
-//        com(0 , nums , new ArrayList<>());
-//
-//        //test
         ans = permuteUnique(nums);
         for (int i = 0; i < ans.size(); i++) {
             for (int j = 0; j < ans.get(0).size(); j++) {
@@ -15,38 +12,28 @@ public class Permutations2 {
             }
             System.out.println();
         }
-
-//        String[] arr = {"a", "b", "c", "d"};
-//        int[] intArr = {1, 2, 3, 4};
-//        Arrays.stream(intArr)
-//                .mapToObj(s-> s +"done")
-//                .forEach(System.out::println);
-
     }
 
 
     public static List<List<Integer>> permuteUnique(int[] nums) {
-        com(0,nums , new ArrayList<>() , new ArrayList<>());
+        com(0,nums , new ArrayList<>() ,new boolean[nums.length]);
         return new ArrayList<>(set);
     }
 
     static List<List<Integer>> ans = new ArrayList<>();
     static HashSet<List<Integer>> set = new HashSet<>();
-
-
-
-    static void com(int in, int nums[] ,  List<Integer> current , List<Integer> used) {
+    static void com(int in, int nums[] ,  List<Integer> current , boolean visited[]) {
         if (current.size() == nums.length) {
             set.add(new ArrayList<>(current));
             return;
         }
         for (int i = in; i < nums.length; i++) {
-            if (!used.contains(i)){
+            if (!visited[i]){
                 current.add(nums[i]);
-                used.add(i);
-                com(in+1,  nums , current , used) ;
+                visited[i]=true;
+                com(in,  nums , current , visited) ;
                 current.remove(current.size()-1);
-                used.remove((Integer)i);
+                visited[i]=false;
             }
         }
     }
